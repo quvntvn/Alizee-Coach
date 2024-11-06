@@ -1,0 +1,49 @@
+/* style/Header.module.css */
+
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 10px 0px;
+  margin-bottom: 50px;
+
+  /* Dégradé de couleur à image */
+  background: linear-gradient(
+      to right,
+      #AC9C8D, /* Couleur actuelle */
+      rgba(172, 156, 141, 0.6) /* Couleur transparente pour fusionner */
+  ),
+  url('  ../../../../../public/images/bgheader.png'); /* Image de fond */
+  background-size: cover; /* Adapter l'image à la largeur */
+  background-repeat: no-repeat; /* Éviter la répétition de l'image */
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  max-width: 60%;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 80px;
+}
+
+.navMenu {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.navLink {
+  color: #000000;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: 500;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.navLink:hover {
+  color: #72383D;
+}
