@@ -11,14 +11,17 @@ export default function Header() {
           <img src="images/logo.png" alt="Thé Tip Top Logo" className={styles.logo} />
         </Link>
         <nav className={styles.navMenu}>
-          <Link href="/a-propos" legacyBehavior>
-            <a className={styles.navLink}>À propos</a>
+        <Link href="/" legacyBehavior>
+            <a className={styles.navLink}>Accueil</a>
           </Link>
           <Link href="/services" legacyBehavior>
             <a className={styles.navLink}>Services</a>
           </Link>
           <Link href="/temoignages" legacyBehavior>
             <a className={styles.navLink}>Témoignages</a>
+          </Link>
+          <Link href="/a-propos" legacyBehavior>
+            <a className={styles.navLink}>À propos</a>
           </Link>
           <Link href="/contact" legacyBehavior>
             <a className={styles.navLink}>Contact</a>
