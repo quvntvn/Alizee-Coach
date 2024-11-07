@@ -5,7 +5,7 @@
   width: 100%;
   justify-content: center;
   padding: 10px 0px;
-  margin-bottom: 50px;
+  margin-bottom: 00px;
 
   /* Dégradé de couleur à image */
   background: linear-gradient(
@@ -27,7 +27,7 @@
 }
 
 .logo {
-  height: 80px;
+  height: 60px;
 }
 
 .navMenu {

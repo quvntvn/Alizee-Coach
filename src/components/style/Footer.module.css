@@ -1,25 +1,55 @@
+/* src/components/style/Footer.module.css */
+
 .footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1.5rem;
-    font-size: 0.9em;
-    margin-top: 50px;
-  }
-  
-  .link {
-    color: #ddd;
-    text-decoration: none;
-    font-weight: 600;
-  }
-  
-  .link:hover {
-    text-decoration: underline;
-  }
-  
-  .powered {
-    font-size: 0.8em;
-    color: #ddd;
-    margin-top: 0.5rem;
-  }
-  
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding-top: 2.3rem;
+  padding-bottom: 2rem;
+  font-size: 0.9em;
+  margin-top: 50px;
+}
+
+.contactInfo {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+
+}
+
+.link {
+  color: #ddd;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.link:hover {
+  text-decoration: none;
+}
+
+.powered {
+  font-size: 0.7em;
+  color: #ddd;
+}
+
+.contactInfo {
+  font-size: 0.8rem;
+  color: #fff;
+  text-align: center;
+  display: flex;
+}
+
+.contactInfo p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contactInfo a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.contactInfo a:hover {
+  text-decoration: none;
+}

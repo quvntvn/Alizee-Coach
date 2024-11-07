@@ -1,8 +1,9 @@
 // src/pages/index.tsx
 
-"use client"; // Directive pour rendre le composant côté client
+"use client";
 
 import Head from 'next/head';
+import { FaInstagram, FaEnvelope, FaPhone } from 'react-icons/fa'; // Assurez-vous d'avoir react-icons installé
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
@@ -20,75 +21,89 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Accueil | Alizée Coach Sportif</title>
+        <title>Accueil | Alizé Coach Sportif</title>
         <meta name="description" content="Transformez votre vie avec le coaching d'Alizée : santé, forme, et bien-être personnalisés." />
       </Head>
 
-      <main className={style.main}>
+      <main className={style.main} aria-label="Page principale du site d'Alizé Waron, coach sportif">
         {/* Section Héro */}        
-        
-        <section className={style.hero}>
-  <div className={`${style.heroColumn} ${style.heroText}`}>
-    <h1>Transformez Votre Vie avec Alizée</h1>
-    <p>Que ce soit pour sculpter votre corps, gagner en énergie, ou adopter un mode de vie sain, Alizée vous accompagne vers vos objectifs avec des séances personnalisées.</p>
-    <Link href="/contact" legacyBehavior>
-      <a className={`${style.ctaButton} ${style.primaryButton}`}>Réservez Maintenant</a>
-    </Link>
-  </div>
-
-  <div className={`${style.heroColumn} ${style.heroImage}`}>
-    <Image src="/images/alizee.png" alt="Alizée Coach Sportif" width={500} height={500} className={style.heroImage} />
-  </div>
-
-  <div className={`${style.heroColumn} ${style.alizeeJourney}`}>
-    <h3>Parcours d'Alizée</h3>
-    <p><strong>Diplômes :</strong></p>
-    <ul>
-      <li>Licence en Sciences du Sport et de l’Entraînement</li>
-      <li>Certification de Coach Personnel</li>
-      <li>Formation en Nutrition Sportive</li>
-    </ul>
-    
-    <p><strong>Expérience professionnelle :</strong></p>
-    <ul>
-      <li>5 ans de coaching personnalisé</li>
-      <li>Expertise en perte de poids et renforcement musculaire</li>
-      <li>Ancienne coach pour une équipe de cross-training</li>
-    </ul>
-  </div>
-</section>
-
-
-
-        {/* Section Services */}
-        <section className={style.servicesSection}>
-          <h2>Nos Services</h2>
-          <div className={style.serviceList}>
-            <div className={style.serviceItem}>
-              <h3>Coaching Personnalisé</h3>
-              <p>Des programmes adaptés pour des résultats optimaux.</p>
-            </div>
-            <div className={style.serviceItem}>
-              <h3>Plans de Nutrition</h3>
-              <p>Un plan nutritionnel sain, adapté à votre style de vie.</p>
-            </div>
-            <div className={style.serviceItem}>
-              <h3>Suivi de Progression</h3>
-              <p>Des bilans réguliers pour évaluer vos avancées.</p>
-            </div>
-            <div className={style.serviceItem}>
-              <h3>Entraînements en Groupe</h3>
-              <p>Boostez votre motivation en vous entraînant avec d’autres.</p>
+        <section className={style.hero} aria-label="Section Héro présentant Alizé et son parcours">
+          {/* Colonne 1 : Image et parcours */}
+          <div className={style.heroLeftColumn} aria-label="Présentation du parcours d'Alizé">
+            <Image src="/images/alize.jpg" alt="Portrait d'Alizé Waron, coach sportif" width={1000} height={1000} className={style.heroImage} />
+            <div className={style.alizeJourney} aria-labelledby="journey-title">
+              <h2 id="journey-title">Mon parcours</h2>
+              <p><strong>Formation :</strong></p>
+              <ul>
+                <li>Formation de professeur de pole dance</li>
+                <li>Licence pro des métiers de la forme</li>
+              </ul>
+              
+              <p><strong>Expérience :</strong></p>
+              <ul>
+                <li>Coach sportif</li>
+                <li>Auto-entrepreneur</li>
+              </ul>
             </div>
           </div>
-          <Link href="/services" className={`${style.ctaButton} ${style.secondaryButton}`}>
+
+          {/* Colonne 2 : Texte et bouton */}
+          <div className={style.heroRightColumn} aria-label="Description et message d'Alizé">
+            <h1 className={style.titleH1}>Alizé Waron</h1>
+            <h2 className={style.titleH2}>Coach sportif</h2>
+            <p className={style.slogan}>Basé sur la neurologie et l'étude du développement psychomoteur</p>
+
+            <div className={style.contactInfo} aria-label="Informations de contact d'Alizé">
+            <p><FaPhone /> <Link href="tel:+33761933515" >+33 7 61 93 35 15</Link></p>
+            <p><FaEnvelope /> <Link href="mailto:alizepoledancer@gmail.com">alizepoledancer@gmail.com</Link></p>
+              <p><FaInstagram /> <a href="https://www.instagram.com/mindtomvmt" target="_blank" rel="noopener noreferrer">mindtomvmt</a></p>
+            </div>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Des méthodes qui vont au-delà de la pratique sportive, elles vous aident à mieux comprendre le fonctionnement de votre corps et de votre esprit.</p>
+
+            <Link href="/contact" legacyBehavior>
+              <a className={`${style.ctaButton} ${style.primaryButton}`} aria-label="Réservez une séance avec Alizé">Réservez Une Séance</a>
+            </Link>
+            {/* Ajout des informations de contact */}
+          </div>
+        </section>
+
+        {/* Section Services */}
+        <section className={style.servicesSection} aria-label="Présentation des services proposés par Alizé">
+          <h2>Nos Services</h2>
+          <table className={style.serviceTable} aria-label="Table des services">
+            <thead>
+              <tr>
+                <th>Service</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Coaching Personnalisé</td>
+                <td>Des programmes adaptés pour des résultats optimaux.</td>
+              </tr>
+              <tr>
+                <td>Plans de Nutrition</td>
+                <td>Un plan nutritionnel sain, adapté à votre style de vie.</td>
+              </tr>
+              <tr>
+                <td>Suivi de Progression</td>
+                <td>Des bilans réguliers pour évaluer vos avancées.</td>
+              </tr>
+              <tr>
+                <td>Entraînements en Groupe</td>
+                <td>Boostez votre motivation en vous entraînant avec d’autres.</td>
+              </tr>
+            </tbody>
+          </table>
+          <Link href="/services" className={`${style.ctaButton} ${style.secondaryButton}`} aria-label="Voir tous les services d'Alizé">
             Découvrir les services
           </Link>
         </section>
 
         {/* Témoignages Clients */}
-        <section className={style.testimonialsSection}>
-          <h2>Ce Que Disent Nos Clients</h2>
+        <section className={style.testimonialsSection} aria-label="Section Témoignages des clients d'Alizé">
+          <h2>Avis des derniers clients</h2>
           <div className={style.testimonial}>
             <p>“Grâce à Alizée, j'ai retrouvé mon énergie et atteint des objectifs que je pensais impossibles. Un coaching au top !”</p>
             <span>- Laura, 35 ans</span>
@@ -96,12 +111,13 @@ export default function Home() {
             <p>“Chaque séance est une dose de motivation et les résultats sont là. Je recommande à 100% !”</p>
             <span>- Marc, 42 ans</span>
           </div>
-          <Link href="/temoignages" className={`${style.ctaButton} ${style.secondaryButton}`}>
+          <Link href="/temoignages" className={`${style.ctaButton} ${style.secondaryButton}`} aria-label="Voir tous les témoignages">
             Voir tous les témoignages
           </Link>
         </section>
 
-        <section className={style.statsSection}>
+        {/* Résultats et Statistiques */}
+        <section className={style.statsSection} aria-label="Statistiques des résultats des clients d'Alizé">
           <h2>Les Résultats Parlent d'Eux-Mêmes</h2>
           <div className={style.statsContainer}>
             <div className={style.statItem}>
@@ -120,10 +136,10 @@ export default function Home() {
         </section>
 
         {/* Appel à l’Action */}
-        <section className={style.ctaSection}>
+        <section className={style.ctaSection} aria-label="Section de réservation pour le coaching avec Alizé">
           <h2>Prêt à Commencer ?</h2>
           <p>Réservez votre première séance et bénéficiez d'un bilan personnalisé gratuit !</p>
-          <Link href="/contact" className={`${style.ctaButton} ${style.primaryButton}`}>
+          <Link href="/contact" className={`${style.ctaButton} ${style.primaryButton}`} aria-label="Réserver une séance avec Alizé">
             Réservez Maintenant
           </Link>
         </section>
