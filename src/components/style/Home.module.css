@@ -65,6 +65,16 @@
     text-align: center;
 
   }
+
+  .journey-title{
+    font-size: 1rem;
+    color: #72383D;
+    font-weight: bold;
+    text-align: center;
+    margin: 1rem 0;
+    line-height: 1.2;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+  }
   
   .alizeJourney ul {
     padding-left: 1.2rem;
