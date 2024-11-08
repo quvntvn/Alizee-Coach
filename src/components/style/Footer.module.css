@@ -1,5 +1,16 @@
 /* src/components/style/Footer.module.css */
 
+.html, .body {
+  height: 100%; /* S'assurer que le body prend toute la hauteur de la fenêtre */
+  margin: 0; /* Enlever les marges par défaut */
+}
+
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%; /* Le contenu prend au moins la hauteur de la fenêtre */
+}
+
 .footer {
   background-color: #333;
   color: #fff;
@@ -7,14 +18,13 @@
   padding-top: 2.3rem;
   padding-bottom: 2rem;
   font-size: 0.9em;
-  margin-top: 50px;
+  margin-top: auto; /* Pousse le footer vers le bas */
 }
 
 .contactInfo {
   display: flex;
   justify-content: center;
   gap: 3rem;
-
 }
 
 .link {

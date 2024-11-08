@@ -21,3 +21,9 @@ section {
   max-width: 75%; /* Largeur maximale pour une bonne lisibilité */
   margin: 0 auto; /* Centre le contenu */
 }
+
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%; /* Assure que le contenu prend au moins toute la hauteur */
+}
