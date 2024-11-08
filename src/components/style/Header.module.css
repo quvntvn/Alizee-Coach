@@ -1,27 +1,24 @@
-/* style/Header.module.css */
-
 .header {
   display: flex;
   width: 100%;
   justify-content: center;
   padding: 10px 0px;
-  margin-bottom: 00px;
+  margin-bottom: 0px;
 
-  /* Dégradé de couleur à image */
   background: linear-gradient(
       to right,
-      #AC9C8D, /* Couleur actuelle */
-      rgba(172, 156, 141, 0.6) /* Couleur transparente pour fusionner */
+      #AC9C8D,
+      rgba(172, 156, 141, 0.6)
   ),
-  url('  ../../../../../public/images/bgheader.png'); /* Image de fond */
-  background-size: cover; /* Adapter l'image à la largeur */
-  background-repeat: no-repeat; /* Éviter la répétition de l'image */
+  url('  ../../../../../public/images/bgheader.png');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .container {
   display: flex;
   align-items: center;
-  max-width: 60%;
+  max-width: 65%;
   width: 100%;
   justify-content: space-between;
 }
@@ -39,11 +36,73 @@
 .navLink {
   color: #000000;
   text-decoration: none;
-  font-size: 1.1em;
+  font-size: 0.9em;
   font-weight: 500;
   transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 .navLink:hover {
   color: #72383D;
+}
+
+/* Styles pour le bouton menu mobile */
+.menuButton {
+  display: none;
+  font-size: 2em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #000000;
+}
+
+/* Masquer le menu sur mobile par défaut */
+.navMenu {
+  display: flex; /* Le menu est visible sur les grands écrans */
+  gap: 20px;
+  align-items: center;
+}
+
+/* Afficher le menu quand il est ouvert */
+.navMenuOpen {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 80px;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding-top: 100px;
+  width: 100%;
+  height: calc(86.3% - 80px);
+  z-index: 10;
+}
+
+.navMenuOpen .navLink {
+  margin: 10px 0;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+/* Afficher le bouton menu et les éléments en mode mobile */
+@media (max-width: 752px) {
+  /* Masquer le menu sur mobile par défaut */
+  .navMenu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* Afficher le menu lorsque le bouton est cliqué */
+  .navMenuOpen {
+    display: flex;
+  }
+
+  /* Afficher le bouton hamburger sur mobile */
+  .menuButton {
+    display: block;
+  }
+
+  /* Modifier l'alignement des éléments dans le container sur mobile */
+  .container {
+    justify-content: space-between;
+  }
 }
