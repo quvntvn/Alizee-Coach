@@ -1,7 +1,10 @@
+// RootLayout.js
 import Head from "next/head";
 import localFont from "next/font/local";
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import style from '../components/style/Layout.module.css';
+
 import { Poppins } from "next/font/google";
 import "./globals.css";
 
@@ -42,9 +45,13 @@ export default function RootLayout({
       </Head>
       
       <body className={`${poppins.className} ${geistSans.variable} ${geistMono.variable}`}>
-      <Header />
-        {children}
-      <Footer/>
+        <div className={style.pageWrapper}>
+          <Header />
+          <main className={style.content}>
+            {children}
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

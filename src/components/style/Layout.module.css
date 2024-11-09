@@ -1,0 +1,21 @@
+/* src/components/style/Layout.module.css */
+
+.pageWrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Occupe toute la hauteur de la fenêtre */
+  }
+  
+  .content {
+    flex: 1; /* Prend tout l'espace disponible, poussant le footer en bas */
+  }
+  
+  .footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding-top: 2.3rem;
+    padding-bottom: 2rem;
+    font-size: 0.9em;
+  }
+  

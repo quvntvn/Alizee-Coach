@@ -1,51 +1,60 @@
+// src/pages/ServicesPage.js
 import { FaDumbbell, FaRunning, FaAppleAlt, FaHeartbeat } from "react-icons/fa";
+import styles from '../../components/style/Services.module.css';
 
 const services = [
   {
     title: "Coaching Personnel",
-    description: "Des séances personnalisées pour répondre à vos objectifs.",
-    icon: <FaDumbbell size={40} className="text-blue-600" />,
+    description: "Des séances personnalisées pour répondre à vos objectifs spécifiques et maximiser votre potentiel.",
+    icon: <FaDumbbell size={40} className={styles.iconBlue} />,
   },
   {
     title: "Programme de Nutrition",
-    description: "Un suivi nutritionnel adapté à vos besoins.",
-    icon: <FaAppleAlt size={40} className="text-green-600" />,
+    description: "Un suivi nutritionnel adapté pour vous aider à atteindre vos objectifs de manière saine et durable.",
+    icon: <FaAppleAlt size={40} className={styles.iconGreen} />,
   },
   {
     title: "Entraînement de Groupe",
-    description: "Des sessions en groupe pour rester motivé ensemble.",
-    icon: <FaRunning size={40} className="text-yellow-500" />,
+    description: "Des sessions en groupe pour rester motivé, se dépasser et s’amuser ensemble.",
+    icon: <FaRunning size={40} className={styles.iconYellow} />,
   },
   {
     title: "Suivi Santé",
-    description: "Des conseils santé pour une meilleure forme physique.",
-    icon: <FaHeartbeat size={40} className="text-red-600" />,
+    description: "Des conseils de santé personnalisés pour une forme optimale et un mode de vie équilibré.",
+    icon: <FaHeartbeat size={40} className={styles.iconRed} />,
   },
 ];
 
 export default function ServicesPage() {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen px-4 py-8 bg-gray-50">
+    <main className={styles.main}>
       {/* Titre */}
-      <h1 className="text-4xl font-bold text-gray-800 mb-8">Nos Services</h1>
+      <h1 className={styles.title}>Nos Services</h1>
       
       {/* Liste des services */}
-      <section className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+      <section className={styles.grid}>
         {services.map((service, index) => (
-          <div
-            key={index}
-            className="bg-white shadow-lg rounded-lg p-6 text-center transform transition duration-300 hover:scale-105"
-          >
-            {/* Icône du service */}
-            <div className="flex justify-center mb-4">{service.icon}</div>
-
-            {/* Titre et description */}
-            <h3 className="text-2xl font-semibold text-gray-800 mb-2">
-              {service.title}
-            </h3>
-            <p className="text-gray-600">{service.description}</p>
+          <div key={index} className={styles.card}>
+            <div className={styles.iconContainer}>{service.icon}</div>
+            <h3 className={styles.cardTitle}>{service.title}</h3>
+            <p className={styles.cardDescription}>{service.description}</p>
           </div>
         ))}
+      </section>
+
+      {/* Section déroulement du plan */}
+      <section className={styles.planSection}>
+        <h2 className={styles.planTitle}>Comment se déroule le plan ?</h2>
+        <ul className={styles.planSteps}>
+          <li>📅 <strong>Premier rendez-vous</strong></li><li>Définition des objectifs et évaluation initiale</li>
+          <li>💪 <strong>Plan personnalisé</strong></li><li>Programme d’entraînement et nutrition adapté</li>
+          <li>🔄 <strong>Suivi régulier</strong></li><li>Ajustements basés sur vos progrès</li>
+          <li>🎯 <strong>Évaluation des résultats</strong></li><li>Bilans pour rester motivé et atteindre vos objectifs</li>
+        </ul>
+        <p className={styles.planDescription}>
+          Le programme commence par un rendez-vous où nous discutons de vos objectifs et faisons un bilan de votre forme actuelle. Ensuite, un plan personnalisé est mis en place comprenant des étapes adaptées à vos besoins. Des évaluations régulières permettent de suivre vos progrès et d’ajuster le programme pour des résultats optimaux.
+        </p>
+
       </section>
     </main>
   );
