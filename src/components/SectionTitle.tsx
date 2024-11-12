@@ -1,11 +1,11 @@
 // src/components/SectionTitle.tsx
-
 import React from "react";
+import styles from "./style/SectionTitle.module.css";
 
 interface SectionTitleProps {
   text: string;
 }
 
 export default function SectionTitle({ text }: SectionTitleProps) {
-  return <h2 className="text-4xl font-bold text-gray-800 mb-8 text-center">{text}</h2>;
+  return <h2 className={styles.sectionTitle}>{text}</h2>;
 }

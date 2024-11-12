@@ -1,0 +1,8 @@
+/* src/components/style/SectionTitle.module.css */
+.sectionTitle {
+    font-size: 2.5rem; /* Ajusté pour équivalent de text-4xl */
+    font-weight: bold;
+    color: #2c3e50; /* Correspond à text-gray-800 */
+    margin-bottom: 2rem; /* Correspond à mb-8 */
+    text-align: center;
+}

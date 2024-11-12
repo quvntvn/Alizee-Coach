@@ -1,5 +1,6 @@
 // src/pages/ServicesPage.js
 import { FaDumbbell, FaRunning, FaAppleAlt, FaHeartbeat } from "react-icons/fa";
+import ReservationBtn from '../../components/ReversationBtn';
 import styles from '../../components/style/Services.module.css';
 
 const services = [
@@ -56,6 +57,7 @@ export default function ServicesPage() {
         </p>
 
       </section>
+      <ReservationBtn />
     </main>
   );
 }

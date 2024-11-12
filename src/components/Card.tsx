@@ -1,33 +1,53 @@
-// src/components/Card.tsx
-
 import React from "react";
 import Image from "next/image";
+import { FaStar } from "react-icons/fa";
+import styles from "./style/Card.module.css";
 
 interface CardProps {
   title: string;
   description: string;
-  image?: string;
+  imageBefore?: string;
+  imageAfter?: string;
+  duration: string;
+  program: string;
+  rating: number;
 }
 
-export default function Card({ title, description, image }: CardProps) {
+export default function Card({ title, description, imageBefore, imageAfter, duration, program, rating }: CardProps) {
   return (
-    <div className="bg-white shadow-lg rounded-lg p-6 text-center transform transition duration-300 hover:scale-105">
-      {/* Affiche l'image si elle est fournie */}
-      {image && (
-        <div className="flex justify-center mb-4">
+    <div className={styles.card}>
+      {/* Photos Avant / Après */}
+      <div className={`${styles.iconContainer} ${styles.flexContainer}`}>
+        {imageBefore && (
           <Image
-            src={image}
-            alt={`Image de ${title}`}
-            width={100}
-            height={100}
+            src={imageBefore}
+            alt={`Avant de ${title}`}
+            width={80}
+            height={80}
             className="rounded-full"
           />
-        </div>
-      )}
+        )}
+        {imageAfter && (
+          <Image
+            src={imageAfter}
+            alt={`Après de ${title}`}
+            width={80}
+            height={80}
+            className="rounded-full"
+          />
+        )}
+      </div>
 
-      {/* Titre et description */}
-      <h3 className="text-xl font-semibold text-gray-800 mb-2">{title}</h3>
-      <p className="text-gray-600">{description}</p>
+      <h3 className={styles.cardTitle}>{title}</h3>
+      <p className={styles.cardDescription}>{description}</p>
+      <p className={styles.durationProgram}>{duration} | {program}</p>
+
+      {/* Étoiles de notation */}
+      <div className={styles.rating}>
+        {Array.from({ length: rating }, (_, i) => (
+          <FaStar key={i} className={styles.ratingIcon} />
+        ))}
+      </div>
     </div>
   );
 }
