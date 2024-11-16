@@ -4,8 +4,10 @@
     align-items: center;
     justify-content: center;
     background-color: #f8f9fa;
-    padding-top: 10px;
-    padding-bottom: 0px;
+    padding: 20px; /* Padding pour tout le conteneur */
+    box-sizing: border-box; /* Inclut les paddings dans la taille totale */
+    max-width: 1200px; /* Largeur maximale pour centrer le contenu */
+    margin: 0 auto; /* Centre horizontalement sur la page */
 }
 
 .title {
@@ -19,17 +21,18 @@
 .grid {
     display: grid;
     gap: 1.5rem;
-    grid-template-columns: 1fr;
+    width: 100%; /* Assure que la grille utilise tout l'espace disponible */
+    box-sizing: border-box; /* Inclut les paddings dans la taille */
 }
 
 @media (min-width: 768px) {
     .grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* Deux colonnes pour tablettes */
     }
 }
 
 @media (min-width: 1024px) {
     .grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr); /* Trois colonnes pour desktop */
     }
 }
