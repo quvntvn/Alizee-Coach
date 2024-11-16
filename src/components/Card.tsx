@@ -1,6 +1,10 @@
-import React from "react";
+// src/components/Card.tsx
+'use client';
+
+import React, { useState } from "react";
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
+import Modal from "./Modal";
 import styles from "./style/Card.module.css";
 
 interface CardProps {
@@ -14,40 +18,59 @@ interface CardProps {
 }
 
 export default function Card({ title, description, imageBefore, imageAfter, duration, program, rating }: CardProps) {
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [showAfterImage, setShowAfterImage] = useState(false);
+
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => {
+    setModalOpen(false);
+    setShowAfterImage(false);
+  };
+  const toggleImage = () => setShowAfterImage(!showAfterImage);
+
   return (
-    <div className={styles.card}>
-      {/* Photos Avant / Après */}
-      <div className={`${styles.iconContainer} ${styles.flexContainer}`}>
+    <>
+      <div className={styles.card} onClick={openModal}>
+        <h3 className={styles.cardTitle}>{title}</h3>
+        
         {imageBefore && (
           <Image
-            src={imageBefore}
-            alt={`Avant de ${title}`}
-            width={80}
-            height={80}
-            className="rounded-full"
-          />
+          src={imageAfter || ""}
+          alt={`Avant de ${title}`}
+          width={300}
+          height={300}
+          className={styles.image}
+/> 
         )}
-        {imageAfter && (
+        <p className={styles.cardDescription}>{description}</p>
+        <p className={styles.durationProgram}>{duration} | {program}</p>
+        
+        <div className={styles.rating}>
+          {Array.from({ length: rating }, (_, i) => (
+            <FaStar key={i} className={styles.ratingIcon} />
+          ))}
+        </div>
+      </div>
+
+      {isModalOpen && (
+        <Modal isOpen={isModalOpen} onClose={closeModal}>
+          <h3>{title}</h3>
           <Image
-            src={imageAfter}
-            alt={`Après de ${title}`}
-            width={80}
-            height={80}
-            className="rounded-full"
+            src={showAfterImage && imageAfter ? imageAfter : imageBefore || ""}
+            alt={showAfterImage ? `Après de ${title}` : `Avant de ${title}`}
+            width={1000}
+            height={1000}
+            className={styles.imageZoom}
           />
-        )}
-      </div>
 
-      <h3 className={styles.cardTitle}>{title}</h3>
-      <p className={styles.cardDescription}>{description}</p>
-      <p className={styles.durationProgram}>{duration} | {program}</p>
 
-      {/* Étoiles de notation */}
-      <div className={styles.rating}>
-        {Array.from({ length: rating }, (_, i) => (
-          <FaStar key={i} className={styles.ratingIcon} />
-        ))}
-      </div>
-    </div>
+          {imageBefore && imageAfter && (
+            <button onClick={toggleImage} className={styles.toggleButton}>
+              {showAfterImage ? "Avant" : "Après"}
+            </button>
+          )}
+        </Modal>
+      )}
+    </>
   );
 }
