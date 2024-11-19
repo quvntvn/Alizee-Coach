@@ -1,69 +1,64 @@
-/* src/components/style/APropos.module.css */
-
 .main {
-    background-color: #f9f9f9;
-  }
-  
-  .profileSection {
-    display: flex; /* Utilisation de flexbox */
-    flex-direction: column; /* Si besoin de contenu sous l'image */
-    align-items: center; /* Centre l'image horizontalement */
-    justify-content: center; /* Centre l'image verticalement */
-    margin-top: 2rem;
-    text-align: center; /* Aligne le texte au centre si présent */
-    background-color: #EFE9E1;
-    padding: 1.5rem;
-    border-radius: 10px;
-  }
-  
-  .profileText {
-    color: #4a4a4a;
-    line-height: 1.6;
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+.profileSection {
+  display: flex;
+  padding: 1.5rem;
+  border-radius: 10px;
+  flex-wrap: wrap; /* Permet le retour à la ligne sur petits écrans */
+  gap: 2rem;
+  margin-top: 2rem;
+  align-items: center;
+  justify-content: center; /* Centre les colonnes sur petits écrans */
+}
+
+.storySection {
+  margin-top: 2rem;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.gridSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Deux colonnes par défaut */
+  gap: 2rem;
+  align-items: center;
+}
+
+.leftCol,
+.rightCol {
+  flex: 1;
+}
+
+.leftCol img,
+.rightCol img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.fade-in {
+  opacity: 0; /* Initialement transparent */
+  transform: translateY(20px); /* Décalage vers le bas */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-visible {
+  opacity: 1; /* Rendu visible */
+  transform: translateY(0); /* Position originale */
+}
+
+@media (max-width: 768px) { /* Adaptation pour les écrans de largeur <= 768px */
+  .gridSection {
+    grid-template-columns: 1fr; /* Une seule colonne */
+    gap: 1.5rem; /* Ajustez l'espacement si nécessaire */
   }
   
   .storySection {
-    text-align: center;
+    padding: 1.5rem; /* Réduisez le padding si besoin */
   }
-  
-  .storySection h2 {
-    color: #1a1a1a;
-    margin-bottom: 1rem;
-  }
-  
-  .imageGallery {
-    display: grid;
-    gap: 1rem;
-    row-gap: 2rem;
-    padding-bottom: 3rem;
-  }
-  
-  .imageGallery img {
-    width: 100%;
-    aspect-ratio: 1 / 1; /* Force un ratio 1:1 pour un carré */
-    object-fit: cover;
-    height: 400px;
-    border-radius: 10px; /* Arrondir les coins */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre subtile */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease; /* Transitions fluides */
-  }
-  
-  .imageGallery img:hover {
-    transform: scale(1.05); /* Légère mise en avant */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
-    filter: brightness(1.1); /* Légère augmentation de la luminosité */
-  }
-  
-  .profileSection img {
-    border-radius: 50%; /* Photo de profil en cercle */
-    width: 200px;
-    height: 200px;
-    object-fit: cover; /* Ajustement pour éviter les distorsions */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Petite ombre pour la photo de profil */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .profileSection img:hover {
-    transform: scale(1.1); /* Zoom au survol */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Accentuation de l'ombre */
-  }
-  
+}

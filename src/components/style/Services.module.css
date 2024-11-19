@@ -5,17 +5,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 10px;
+    padding: 20px; /* Padding pour tout le conteneur */
     padding-bottom: 50px;
     background-color: #f8f9fa;
-  }
-  
-  .title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #2c3e50;
-    margin-bottom: 2rem;
-    text-align: center;
   }
   
   /* Grid des services */

@@ -1,6 +1,6 @@
 .card {
     padding: 15px; /* Crée de l'espace à l'intérieur de chaque carte */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.35);
     border-radius: 10px;
     background-color: white;
     overflow: hidden; /* Empêche le contenu de déborder */
@@ -76,7 +76,6 @@
     height: auto;
     aspect-ratio: 1 / 1;
     border-radius: 8px;
-    padding: 0.5rem;
     object-fit: cover;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }

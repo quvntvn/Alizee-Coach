@@ -3,8 +3,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #f8f9fa;
+    background-color: #fff;
     padding: 20px; /* Padding pour tout le conteneur */
+    padding-bottom: 50px;
     box-sizing: border-box; /* Inclut les paddings dans la taille totale */
     max-width: 1200px; /* Largeur maximale pour centrer le contenu */
     margin: 0 auto; /* Centre horizontalement sur la page */

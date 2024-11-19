@@ -83,7 +83,7 @@
 }
 
 /* Afficher le bouton menu et les éléments en mode mobile */
-@media (max-width: 752px) {
+@media (max-width: 835px) {
   /* Masquer le menu sur mobile par défaut */
   .navMenu {
     display: none;

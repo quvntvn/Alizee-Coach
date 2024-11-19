@@ -2,6 +2,7 @@
 import { FaDumbbell, FaRunning, FaAppleAlt, FaHeartbeat } from "react-icons/fa";
 import ReservationBtn from '../../components/ReversationBtn';
 import styles from '../../components/style/Services.module.css';
+import SectionTitle from "@/components/SectionTitle";
 
 const services = [
   {
@@ -30,8 +31,7 @@ export default function ServicesPage() {
   return (
     <main className={styles.main}>
       {/* Titre */}
-      <h1 className={styles.title}>Nos Services</h1>
-      
+      <SectionTitle text="Mes Services" />
       {/* Liste des services */}
       <section className={styles.grid}>
         {services.map((service, index) => (
