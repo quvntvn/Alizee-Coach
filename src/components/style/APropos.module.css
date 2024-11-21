@@ -1,22 +1,14 @@
-.main {
-  background-color: #f9f9f9;
-  padding: 20px;
-}
-
 .profileSection {
   display: flex;
-  padding: 1.5rem;
   border-radius: 10px;
   flex-wrap: wrap; /* Permet le retour à la ligne sur petits écrans */
   gap: 2rem;
-  margin-top: 2rem;
   align-items: center;
   justify-content: center; /* Centre les colonnes sur petits écrans */
 }
 
 .storySection {
   margin-top: 2rem;
-  padding: 2rem;
   border-radius: 10px;
 }
 

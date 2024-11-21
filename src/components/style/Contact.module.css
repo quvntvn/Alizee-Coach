@@ -1,75 +1,104 @@
-/* src/styles/Contact.module.css */
-
 .main {
-    max-width: 600px;
-    margin: 0 auto;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 0px;
-    padding-bottom: 40px;
-    text-align: center;
-}
-
-.h1 {
-    font-size: 2em;
-    color: #72383D;
-    margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centre verticalement */
+  align-items: center; /* Centre horizontalement */
+  background-color: #f9f9f9;
 }
 
 .contactForm {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 20px;
+  width: 500px;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.35);
+  background-color: #fff;
+  gap: 20px; /* Espace entre les champs */
+  display: flex;
+  flex-direction: column;
 }
 
-.contactForm label {
-    font-weight: 500;
-    text-align: left;
+.contactForm select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1rem;
+  border: 1px solid #000;
+  color: #000;
+  background-color: #fff;
 }
+
+.contactForm div {
+  margin: 10px 0;
+}
+
+.contactForm div label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  gap: 10px;
+  font-size: 1rem;
+}
+
+.contactForm div label input {
+  transform: scale(1.2);
+}
+
 
 .contactForm input,
 .contactForm textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
-    width: 100%;
+  align-self: center;
+  font-family: poppins;
+  border-radius: 10px;
+  font-size: 1rem;
+  border-width: 1px;
+  border-color: #000;
+  color: #000;
+  width: 100%; /* Les champs occupent la largeur */
+  padding: 10px;
 }
 
 .contactForm textarea {
-    resize: vertical;
-    min-height: 100px;
+  font-family: poppins;
+  border-width: 1px;
+  border-color: #000;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #000;
+  min-height: 200px;
+  padding: 10px;
 }
 
 .submitButton {
-    width: 100%;
-    padding: 10px 20px;
-    background-color: #72383D;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  font-size: 1rem;
+  max-width: 400px;
+  border-width: 0px;
+  display: inline-flex;
+  padding: 0.75rem 1.5rem;
+  margin: 1rem auto; /* Centre le bouton dans son conteneur */
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #72383D;
+  color: white;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  margin: 0 auto; /* Centre le bouton */
 }
 
 .submitButton:hover {
-    background-color: #AC9C8D;
+  background-color: #AC9C8D;
 }
 
 .socialLinks {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
+  margin-top: 30px;
+  text-align: center;
 }
 
 .socialLinks a {
-    color: #72383D;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.socialLinks a:hover {
-    color: #AC9C8D;
+  text-decoration-line: none;
+  display: inline-block;
+  margin: 0 10px;
+  color: #72383d;
+  font-weight: bold;
 }

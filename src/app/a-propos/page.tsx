@@ -2,6 +2,7 @@ import SectionTitle from "@/components/SectionTitle";
 import ProfileImage from "@/components/ProfileImage";
 import styles from "../../components/style/APropos.module.css";
 import FadeIn from "@/components/FadeIn";
+import ReservationBtn from '../../components/ReversationBtn';
 
 export default function AboutPage() {
   return (
@@ -64,7 +65,7 @@ export default function AboutPage() {
     </FadeIn>
   </div>
 </section>
-
+<ReservationBtn />
     </main>
   );
 }
