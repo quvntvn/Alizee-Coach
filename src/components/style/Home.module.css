@@ -80,27 +80,39 @@
     margin: 0.5rem 0;
   }
   
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+  }
+  
   .ctaButton {
     display: inline-flex;
-    padding: 1rem;
-    margin: 1rem auto; /* Centre le bouton horizontalement */
+    padding: 1rem 2rem;
+    margin: 1rem auto;
     border-radius: 5px;
     font-weight: bold;
     text-align: center;
+    background-color: #72383D;
+    color: white;
     transition: background-color 0.3s ease;
     text-decoration: none;
-    max-width: 90%; /* Limite la largeur à 90% sur petits écrans */
-    justify-content: center; /* Centre le contenu du bouton */
+    justify-content: center;
+  }
+  
+  .ctaButton:hover {
+    background-color: #AC9C8D;
   }
   
   @media (max-width: 768px) {
     .ctaButton {
-      padding: 0.75rem 1rem; /* Réduit les marges et le padding sur mobile */
-      font-size: 0.9rem; /* Ajuste la taille de la police */
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+      max-width: 90%;
     }
   }
-  
- 
   
   .primaryButton {
     background-color: #72383D;
@@ -191,7 +203,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: auto;
+    padding: 1rem;
     background: linear-gradient(to top, #EFE9E1, #EFE9E1);
     color: black;
     border-radius: 10px;
