@@ -83,13 +83,23 @@
   .ctaButton {
     display: inline-flex;
     padding: 1rem;
-    margin: 1rem auto; /* Centre le bouton dans son conteneur */
+    margin: 1rem auto; /* Centre le bouton horizontalement */
     border-radius: 5px;
     font-weight: bold;
     text-align: center;
     transition: background-color 0.3s ease;
     text-decoration: none;
-}
+    max-width: 90%; /* Limite la largeur à 90% sur petits écrans */
+    justify-content: center; /* Centre le contenu du bouton */
+  }
+  
+  @media (max-width: 768px) {
+    .ctaButton {
+      padding: 0.75rem 1rem; /* Réduit les marges et le padding sur mobile */
+      font-size: 0.9rem; /* Ajuste la taille de la police */
+    }
+  }
+  
  
   
   .primaryButton {
