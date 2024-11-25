@@ -190,3 +190,48 @@
 .contactForm label.no-required::after {
   content: '';
 }
+
+/* Global reset pour le responsive */
+.body, .html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Pour les petits écrans */
+@media (max-width: 768px) {
+  .contactForm {
+    width: 90%; /* Réduit la largeur pour s'adapter à l'écran */
+    padding: 1.5rem; /* Diminue les marges */
+  }
+
+  .contactForm input,
+  .contactForm textarea,
+  .contactForm select,
+  .contactForm button {
+    font-size: 0.9rem; /* Réduit la taille de la police */
+    padding: 8px; /* Réduit les marges internes */
+  }
+
+  .fileLabel {
+    max-width: 150px; /* Réduit la largeur maximale pour les petits écrans */
+    font-size: 0.8rem; /* Adapte la taille de police */
+  }
+
+  .submitButton {
+    font-size: 0.9rem; /* Réduit la taille du bouton */
+    padding: 0.5rem 1rem; /* Ajuste le padding */
+  }
+
+  .socialLinks {
+    flex-direction: column; /* Empile les liens sociaux verticalement */
+    gap: 10px; /* Espace entre les liens */
+  }
+}
+
+/* Large écrans */
+@media (min-width: 769px) {
+  .contactForm {
+    max-width: 400px;
+  }
+}
