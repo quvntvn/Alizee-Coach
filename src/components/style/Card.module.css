@@ -1,7 +1,7 @@
 .card {
     padding: 15px; /* Crée de l'espace à l'intérieur de chaque carte */
     box-shadow: 0 0px 10px rgba(0, 0, 0, 0.35);
-    padding: 1rem;
+    padding: 1rem !important;
     border-radius: 10px;
     background-color: white;
     overflow: hidden; /* Empêche le contenu de déborder */
@@ -19,6 +19,7 @@
 
 .flexContainer {
     gap: 1rem;
+    padding: 0.5rem;
 }
 
 .cardTitle {
