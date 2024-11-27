@@ -35,7 +35,7 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
+    alert('Formulaire soumis avec succès (traité par Netlify) !');
     const formData = new FormData(e.target as HTMLFormElement);
     const data = {
       name: formData.get('name'),
@@ -73,7 +73,11 @@ export default function Contact() {
         </FadeIn>
 
         <FadeIn>
-          <form className={styles.contactForm} onSubmit={handleSubmit} method="post" encType="multipart/form-data">
+          <form className={styles.contactForm} onSubmit={handleSubmit} method="post" encType="multipart/form-data"
+          data-netlify="true"
+          name="contact"
+          >
+            
             <label htmlFor="name" className={styles.required}>Nom</label>
             <input 
               type="text" 
