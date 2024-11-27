@@ -49,8 +49,4 @@
     grid-template-columns: 1fr; /* Une seule colonne */
     gap: 1.5rem; /* Ajustez l'espacement si nécessaire */
   }
-  
-  .storySection {
-    padding: 1.5rem; /* Réduisez le padding si besoin */
-  }
 }
