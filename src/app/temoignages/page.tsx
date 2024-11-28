@@ -1,6 +1,8 @@
+"use client";
 import React from "react";
 import Card from "@/components/Card";
 import SectionTitle from "@/components/SectionTitle";
+import FadeIn from 'react-fade-in';
 import ReservationBtn from '../../components/ReversationBtn';
 import styles from "../../components/style/Temoignages.module.css"; // Module CSS importé
 
@@ -37,6 +39,7 @@ const testimonials = [
 export default function TestimonialsPage() {
   return (
     <main className={styles.main}> {/* Applique la classe .main */}
+      <FadeIn>
       <SectionTitle text="Témoignages" />
       <section className={styles.grid}> {/* Applique la classe .grid */}
         {testimonials.map((testimonial, index) => (
@@ -53,6 +56,7 @@ export default function TestimonialsPage() {
         ))}
       </section>
       <ReservationBtn />
+      </FadeIn>
     </main>
   );
 }

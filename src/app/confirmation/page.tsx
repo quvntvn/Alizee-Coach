@@ -1,5 +1,7 @@
+"use client";
 import Head from 'next/head';
 import Link from 'next/link';
+import FadeIn from 'react-fade-in';
 import styles from '../../components/style/Confirmation.module.css';
 
 export default function Confirmation() {
@@ -10,6 +12,7 @@ export default function Confirmation() {
         <meta name="description" content="Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais." />
       </Head>
       <main>
+        <FadeIn>
         <div className={styles.content}>
         <h1>Merci pour votre message !</h1>
         <p>
@@ -19,6 +22,7 @@ export default function Confirmation() {
           Retour à la page d'accueil
         </Link>
         </div>
+        </FadeIn>
       </main>
     </>
   );

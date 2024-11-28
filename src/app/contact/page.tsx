@@ -1,7 +1,7 @@
 "use client";
 import styles from '../../components/style/Contact.module.css';
 import SectionTitle from '@/components/SectionTitle';
-import FadeIn from '@/components/FadeIn';
+import FadeIn from 'react-fade-in';
 import Head from 'next/head';
 
 export default function Contact() {
@@ -15,9 +15,7 @@ export default function Contact() {
       <main className={`${styles.main} bg-gray-50`}>
         <FadeIn>
           <SectionTitle text="Contactez-Moi" />
-        </FadeIn>
 
-        <FadeIn>
           <form
             className={styles.contactForm}
             action="https://formspree.io/f/mvgowllv"
@@ -65,9 +63,7 @@ export default function Contact() {
 
             <button type="submit" className={styles.submitButton}>Envoyer</button>
           </form>
-        </FadeIn>
 
-        <FadeIn>
           <section className={styles.socialLinks}>
             <p className="text-lg font-medium">Suivez-moi sur les réseaux sociaux :</p>
             <div className="flex gap-4 justify-center">

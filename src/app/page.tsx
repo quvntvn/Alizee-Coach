@@ -8,6 +8,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import style from '../components/style/Home.module.css';
+import FadeIn from 'react-fade-in';
 
 export default function Home() {
   const [isClient, setIsClient] = useState(false);
@@ -26,7 +27,8 @@ export default function Home() {
       </Head>
 
       <main className={style.main} aria-label="Page principale du site d'Alizé Waron, coach sportif">
-        {/* Section Héro */}        
+        {/* Section Héro */}  
+        <FadeIn>      
         <section className={style.hero} aria-label="Section Héro présentant Alizé et son parcours">
           {/* Colonne 1 : Image et parcours */}
           <div className={style.heroLeftColumn} aria-label="Présentation du parcours d'Alizé">
@@ -143,6 +145,7 @@ export default function Home() {
             Réservez Maintenant
           </Link>
         </section>
+        </FadeIn>
       </main>
     </>
   );

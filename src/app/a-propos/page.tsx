@@ -1,21 +1,20 @@
+"use client"
 import SectionTitle from "@/components/SectionTitle";
 import ProfileImage from "@/components/ProfileImage";
 import styles from "../../components/style/APropos.module.css";
-import FadeIn from "@/components/FadeIn";
 import ReservationBtn from '../../components/ReversationBtn';
+import FadeIn from 'react-fade-in';
 
 export default function AboutPage() {
   return (
     <main className={`${styles.main} min-h-screen px-4 py-8 bg-gray-50 text-gray-800`}>
+      <FadeIn>
       <SectionTitle text="À propos de moi" />
 
       <section className={`${styles.profileSection}`}>
-        <FadeIn>
           <div className={`${styles.leftCol}`}>
             <ProfileImage src="/images/alize.jpg" alt="Photo d'Alizé Coach Sportif" />
           </div>
-        </FadeIn>
-        <FadeIn>
           <div className={`${styles.rightCol}`}>
             <p className="text-lg mb-4">
               Je suis Alizé, coach sportif passionnée avec plus de 5 ans d’expérience dans
@@ -31,15 +30,11 @@ export default function AboutPage() {
               tout en prenant soin de votre bien-être mental et physique.
             </p>
           </div>
-        </FadeIn>
       </section>
 
       <section className={`${styles.storySection}`}>
-  <FadeIn>
     <h2 className="text-2xl font-bold mb-4">L'histoire d'Alizé</h2>
-  </FadeIn>
   <div className={`${styles.gridSection}`}>
-    <FadeIn>
       <div className={`${styles.leftCol}`}>
         <p className="text-lg mb-4">
           Depuis mon plus jeune âge, le sport a toujours été une passion. J'ai commencé par
@@ -53,8 +48,6 @@ export default function AboutPage() {
           sportifs.
         </p>
       </div>
-    </FadeIn>
-    <FadeIn>
       <div className={`${styles.rightCol}`}>
         <img
           src="/images/alize.jpg"
@@ -62,10 +55,10 @@ export default function AboutPage() {
           className="rounded-lg shadow-md"
         />
       </div>
-    </FadeIn>
   </div>
 </section>
 <ReservationBtn />
+</FadeIn>
     </main>
   );
 }

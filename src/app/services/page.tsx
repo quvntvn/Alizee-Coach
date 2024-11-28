@@ -1,8 +1,10 @@
 // src/pages/ServicesPage.js
+"use client"
 import { FaDumbbell, FaRunning, FaAppleAlt, FaHeartbeat } from "react-icons/fa";
 import ReservationBtn from '../../components/ReversationBtn';
 import styles from '../../components/style/Services.module.css';
 import SectionTitle from "@/components/SectionTitle";
+import FadeIn from 'react-fade-in';
 
 const services = [
   {
@@ -30,6 +32,7 @@ const services = [
 export default function ServicesPage() {
   return (
     <main className={styles.main}>
+      <FadeIn>
       {/* Titre */}
       <SectionTitle text="Mes Services" />
       {/* Liste des services */}
@@ -58,6 +61,7 @@ export default function ServicesPage() {
 
       </section>
       <ReservationBtn />
+      </FadeIn>
     </main>
   );
 }

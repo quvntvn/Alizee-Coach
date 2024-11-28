@@ -1,10 +1,11 @@
 .profileSection {
   display: flex;
   border-radius: 10px;
-  flex-wrap: wrap; /* Permet le retour à la ligne sur petits écrans */
+  flex-wrap: wrap;
   gap: 2rem;
   align-items: center;
-  justify-content: center; /* Centre les colonnes sur petits écrans */
+  justify-content: center;
+  flex-direction: column; /* Ajouté pour empiler les éléments (photo au-dessus du texte) */
 }
 
 .storySection {
