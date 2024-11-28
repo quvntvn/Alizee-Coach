@@ -1,0 +1,40 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 55vh; /* Prend toute la hauteur de l'écran */
+    text-align: center; /* Centre le texte */
+    background-color: #f9f9f9; /* Couleur d'arrière-plan douce */
+    padding: 16px; /* Ajoute de l'espace pour éviter les débordements */
+}
+
+.h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.ctaButton {
+    display: inline-flex;
+    padding: 1rem 2rem;
+    margin: 1rem auto;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #72383D;
+    color: white;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    justify-content: center;
+  }
+  
+  .ctaButton:hover {
+    background-color: #AC9C8D;
+  }
