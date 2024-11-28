@@ -71,7 +71,6 @@ export default function Contact() {
           <section className={styles.socialLinks}>
             <p className="text-lg font-medium">Suivez-moi sur les réseaux sociaux :</p>
             <div className="flex gap-4 justify-center">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
             </div>
           </section>
