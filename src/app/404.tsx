@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import styles from '../../components/style/404.module.css';
+import styles from '../components/style/404.module.css';
 
 export default function Confirmation() {
   return (

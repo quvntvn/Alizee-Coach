@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /404
+Disallow: /confirmation
+Sitemap: https://alize-waron.netlify.app//sitemap.xml
