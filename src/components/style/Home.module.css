@@ -205,7 +205,6 @@
   
   .serviceTable {
     width: 100%;
-    margin: 2rem 0;
     border-collapse: collapse;
     text-align: left;
   }
@@ -223,6 +222,10 @@
     margin: 1rem 0;
     line-height: 1.2;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.statsSection h2 {
+  margin-bottom: -15px;
 }
 
 .titleH2 {
