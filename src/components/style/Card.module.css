@@ -114,20 +114,6 @@
       transform: none; /* Désactive l'effet de scale */
     }
   }
-
-  .imageContainer {
-    position: relative;
-    width: 100%;
-    height: 300px; /* Taille fixe pour éviter les décalages */
-    display: flex;
-    border-radius: 8px; /* Coins arrondis */
-    align-self: center;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-    background-color: #f0f0f0; /* Fond de chargement */
-    overflow: hidden;
-  }
   
   .spinner {
     align-self: center;
