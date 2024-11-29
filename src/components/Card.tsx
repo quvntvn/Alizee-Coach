@@ -1,3 +1,4 @@
+// src/components/Card.tsx
 'use client';
 
 import React, { useState } from "react";
@@ -19,7 +20,6 @@ interface CardProps {
 export default function Card({ title, description, imageBefore, imageAfter, duration, program, rating }: CardProps) {
   const [isModalOpen, setModalOpen] = useState(false);
   const [showAfterImage, setShowAfterImage] = useState(false);
-  const [imageLoaded, setImageLoaded] = useState(false); // Nouvel état pour le chargement des images
 
   const openModal = () => setModalOpen(true);
   const closeModal = () => {
@@ -32,25 +32,19 @@ export default function Card({ title, description, imageBefore, imageAfter, dura
     <>
       <div className={styles.card} onClick={openModal}>
         <h3 className={styles.cardTitle}>{title}</h3>
-
-        <div className={styles.imageContainer}>
-          {/* Spinner affiché si l'image n'est pas chargée */}
-          {!imageLoaded && <div className={styles.spinner}></div>}
-          {imageBefore && (
-            <Image
-              src={imageAfter || ""}
-              alt={`Avant de ${title}`}
-              width={300}
-              height={300}
-              className={`${styles.image} ${imageLoaded ? "" : styles.hidden}`}
-              onLoad={() => setImageLoaded(true)} // Détecte le chargement
-            />
-          )}
-        </div>
-
+        
+        {imageBefore && (
+          <Image
+          src={imageAfter || ""}
+          alt={`Avant de ${title}`}
+          width={300}
+          height={300}
+          className={styles.image}
+/> 
+        )}
         <p className={styles.cardDescription}>{description}</p>
         <p className={styles.durationProgram}>{duration} | {program}</p>
-
+        
         <div className={styles.rating}>
           {Array.from({ length: rating }, (_, i) => (
             <FaStar key={i} className={styles.ratingIcon} />
@@ -68,6 +62,7 @@ export default function Card({ title, description, imageBefore, imageAfter, dura
             height={1000}
             className={styles.imageZoom}
           />
+
 
           {imageBefore && imageAfter && (
             <button onClick={toggleImage} className={styles.toggleButton}>

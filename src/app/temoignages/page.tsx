@@ -11,7 +11,7 @@ const testimonials = [
   {
     name: "Claire D.",
     text: "Grâce à Alizé, j'ai retrouvé confiance en moi et je me sens en pleine forme !",
-    imageBefore: "/images/clairefdB.png",
+    imageBefore: "/images/clairedB.png",
     imageAfter: "/images/clairedA.png",
     duration: "6 mois de coaching",
     program: "Programme bien-être",
