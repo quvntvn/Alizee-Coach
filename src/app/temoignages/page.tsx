@@ -1,10 +1,11 @@
 "use client";
 import React from "react";
+import Head from "next/head"; // Import du composant Head de Next.js
 import Card from "@/components/Card";
 import SectionTitle from "@/components/SectionTitle";
-import FadeIn from 'react-fade-in';
+import FadeIn from "react-fade-in";
 import ReservationBtn from '../../components/ReversationBtn';
-import styles from "../../components/style/Temoignages.module.css"; // Module CSS importé
+import styles from "@/components/style/Temoignages.module.css"; // Module CSS importé
 
 const testimonials = [
   {
@@ -38,25 +39,37 @@ const testimonials = [
 
 export default function TestimonialsPage() {
   return (
-    <main className={styles.main}> {/* Applique la classe .main */}
-      <FadeIn>
-      <SectionTitle text="Témoignages" />
-      <section className={styles.grid}> {/* Applique la classe .grid */}
-        {testimonials.map((testimonial, index) => (
-          <Card
-            key={index}
-            title={testimonial.name}
-            description={testimonial.text}
-            imageBefore={testimonial.imageBefore}
-            imageAfter={testimonial.imageAfter}
-            duration={testimonial.duration}
-            program={testimonial.program}
-            rating={testimonial.rating}
-          />
-        ))}
-      </section>
-      <ReservationBtn />
-      </FadeIn>
-    </main>
+    <>
+      <Head>
+        {/* Préchargement des images */}
+        <link rel="preload" as="image" href="/images/clairedB.png" />
+        <link rel="preload" as="image" href="/images/clairedA.png" />
+        <link rel="preload" as="image" href="/images/thomamB.png" />
+        <link rel="preload" as="image" href="/images/thomamA.png" />
+        <link rel="preload" as="image" href="/images/sophiemB.png" />
+        <link rel="preload" as="image" href="/images/sophiemA.png" />
+      </Head>
+
+      <main className={styles.main}> {/* Classe principale */}
+        <FadeIn>
+          <SectionTitle text="Témoignages" />
+          <section className={styles.grid}> {/* Grille des témoignages */}
+            {testimonials.map((testimonial, index) => (
+              <Card
+                key={index}
+                title={testimonial.name}
+                description={testimonial.text}
+                imageBefore={testimonial.imageBefore}
+                imageAfter={testimonial.imageAfter}
+                duration={testimonial.duration}
+                program={testimonial.program}
+                rating={testimonial.rating}
+              />
+            ))}
+          </section>
+          <ReservationBtn />
+        </FadeIn>
+      </main>
+    </>
   );
 }
