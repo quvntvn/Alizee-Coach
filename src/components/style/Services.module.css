@@ -30,10 +30,6 @@
     transition: transform 0.3s ease;
   }
   
-  .card:hover {
-    transform: scale(1.05);
-  }
-  
   .iconContainer {
     margin-bottom: 1rem;
     display: flex;
@@ -78,6 +74,7 @@
   }
   
   .planTitle {
+    padding: 1rem;
     font-size: 1.8rem;
     font-weight: bold;
     color: #2c3e50;
@@ -88,13 +85,16 @@
   .planDescription {
     font-size: 0.8rem;
     color: #4a4a4a;
-    padding: 5%;
+    padding: 1.5rem;
     margin-bottom: 1.5rem;
   }
   
   .planSteps {
     list-style-type: none;
-    padding: 5%;
+    align-items: center;
+    justify-content: center;
+    align-self: auto;
+    padding: 1rem;
   }
   
   .planSteps li {

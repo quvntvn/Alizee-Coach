@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import style from '../components/style/Home.module.css';
 import FadeIn from 'react-fade-in';
+import ReservationBtn from '../components/ReversationBtn';
 
 export default function Home() {
   const [isClient, setIsClient] = useState(false);
@@ -138,13 +139,7 @@ export default function Home() {
         </section>
 
         {/* Appel à l’Action */}
-        <section className={style.ctaSection} aria-label="Section de réservation pour le coaching avec Alizé">
-          <h2>Prêt à Commencer ?</h2>
-          <p>Réservez votre première séance et bénéficiez d'un bilan personnalisé gratuit !</p>
-          <Link href="/contact" className={`${style.ctaButton} ${style.primaryButton}`} aria-label="Réserver une séance avec Alizé">
-            Réservez Maintenant
-          </Link>
-        </section>
+        <ReservationBtn />
         </FadeIn>
       </main>
     </>
