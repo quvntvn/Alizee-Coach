@@ -49,7 +49,6 @@ export default function TestimonialsPage() {
         <link rel="preload" as="image" href="/images/sophiemB.png" />
         <link rel="preload" as="image" href="/images/sophiemA.png" />
       </Head>
-
       <main className={styles.main}> {/* Classe principale */}
         <FadeIn>
           <SectionTitle text="Témoignages" />
