@@ -84,8 +84,8 @@
 }
 
 .imageZoom {
-    width: 90%;
-    height: 90%;
+    width: 97%;
+    height: 97%;
     max-height: fit-content;
     align-items: center;
     justify-content: center;
@@ -99,3 +99,9 @@
     overflow: hidden; /* Cache toute partie qui dépasse des bords */
 }
 
+@media (max-width: 768px) {
+    .card:hover {
+      transform: none; /* Désactive l'effet de scale */
+    }
+  }
+  
