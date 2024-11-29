@@ -12,7 +12,7 @@ export default function Contact() {
         <meta name="description" content="Contactez-nous pour toute question ou information." />
       </Head>
 
-      <main className={`${styles.main} bg-gray-50`}>
+      <main>
         <FadeIn>
           <SectionTitle text="Contactez-Moi" />
 

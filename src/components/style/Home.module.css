@@ -1,14 +1,4 @@
-/* src/pages/Home.module.css */
-
-.main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
-    box-sizing: border-box;
-}
-  
-.hero {
+  .hero {
     display: flex;
     gap: 2rem;
     background: linear-gradient(to right, #EFE9E1, #EFE9E1);
@@ -17,7 +7,7 @@
     border-radius: 10px;
     max-width: 1200px;
     box-sizing: border-box;
-    width: 100%; /* S'assure que la section prend 100% de la largeur du conteneur */
+    width: 90%; /* S'assure que la section prend 100% de la largeur du conteneur */
     padding-left: 1rem; /* Ajoute un espace à gauche */
     padding-right: 1rem; /* Ajoute un espace à droite */
 }
@@ -164,9 +154,9 @@
   }
   
   .servicesSection, .testimonialsSection {
-    width: 100%;
+    margin-top: 60px;
+    width: 90%;
     max-width: 800px;
-    margin: 3rem ;
     text-align: center;
   }
 
@@ -203,6 +193,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
     width: auto;
     padding: 1rem;
     background: linear-gradient(to top, #EFE9E1, #EFE9E1);
