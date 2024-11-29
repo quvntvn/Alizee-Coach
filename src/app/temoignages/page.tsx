@@ -8,10 +8,10 @@ import styles from "../../components/style/Temoignages.module.css"; // Module CS
 
 const testimonials = [
   {
-    name: "Claire Dupont",
+    name: "Claire D.",
     text: "Grâce à Alizé, j'ai retrouvé confiance en moi et je me sens en pleine forme !",
-    imageBefore: "/images/claire.png",
-    imageAfter: "/images/claire.png",
+    imageBefore: "/images/clairedB.png",
+    imageAfter: "/images/clairedA.png",
     duration: "6 mois de coaching",
     program: "Programme bien-être",
     rating: 5,
@@ -19,8 +19,8 @@ const testimonials = [
   {
     name: "Thomas Martin",
     text: "Un coaching exceptionnel qui m'a permis de dépasser mes limites et d'atteindre mes objectifs sportifs.",
-    imageBefore: "/images/claire.png",
-    imageAfter: "/images/claire.png",
+    imageBefore: "/images/thomamB.png",
+    imageAfter: "/images/thomamA.png",
     duration: "3 mois de coaching",
     program: "Programme performance",
     rating: 4,
@@ -28,8 +28,8 @@ const testimonials = [
   {
     name: "Sophie Moreau",
     text: "Les séances sont adaptées à mes besoins, je me sens en sécurité et motivée !",
-    imageBefore: "/images/claire.png",
-    imageAfter: "/images/claire.png",
+    imageBefore: "/images/sophiemB.png",
+    imageAfter: "/images/sophiemA.png",
     duration: "8 mois de coaching",
     program: "Programme santé",
     rating: 5,

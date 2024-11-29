@@ -13,26 +13,14 @@
 
 .modalContent {
   background: #fff;
-  padding: 2rem;
+  padding: 1rem;
   width: 80%;
-  padding: 1 rem;
   margin: 1rem;
   max-width: 600px;
   border-radius: 0.5rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   position: relative;
   animation: fadeIn 0.3s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
 }
 
 .modalBody {
