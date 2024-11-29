@@ -14,7 +14,7 @@
 .imageContainer {
     position: relative;
     width: 100%;
-    height: 300px; /* Taille fixe pour éviter les décalages */
+    height: 100%; /* Taille fixe pour éviter les décalages */
     display: flex;
     border-radius: 8px; /* Coins arrondis */
     align-self: center;
