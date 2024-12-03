@@ -1,6 +1,3 @@
-// src/components/Card.tsx
-'use client';
-
 import React, { useState } from "react";
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
@@ -20,6 +17,7 @@ interface CardProps {
 export default function Card({ title, description, imageBefore, imageAfter, duration, program, rating }: CardProps) {
   const [isModalOpen, setModalOpen] = useState(false);
   const [showAfterImage, setShowAfterImage] = useState(false);
+  const [isImageLoading, setImageLoading] = useState(true); // État pour le chargement de l'image
 
   const openModal = () => setModalOpen(true);
   const closeModal = () => {
@@ -32,19 +30,22 @@ export default function Card({ title, description, imageBefore, imageAfter, dura
     <>
       <div className={styles.card} onClick={openModal}>
         <h3 className={styles.cardTitle}>{title}</h3>
-        
-        {imageBefore && (
+
+        <div className={styles.imageContainer}>
+          {isImageLoading && <p className={styles.loadingText}>Chargement en cours...</p>}
           <Image
-          src={imageAfter || ""}
-          alt={`Avant de ${title}`}
-          width={300}
-          height={300}
-          className={styles.image}
-/> 
-        )}
+            src={imageBefore || ""}
+            alt={`Avant de ${title}`}
+            width={300}
+            height={300}
+            className={styles.image}
+            onLoad={() => setImageLoading(false)} // Marque l'image comme chargée
+          />
+        </div>
+
         <p className={styles.cardDescription}>{description}</p>
         <p className={styles.durationProgram}>{duration} | {program}</p>
-        
+
         <div className={styles.rating}>
           {Array.from({ length: rating }, (_, i) => (
             <FaStar key={i} className={styles.ratingIcon} />
@@ -55,15 +56,17 @@ export default function Card({ title, description, imageBefore, imageAfter, dura
       {isModalOpen && (
         <Modal isOpen={isModalOpen} onClose={closeModal}>
           <h3>{title}</h3>
-          <Image
-            src={showAfterImage && imageAfter ? imageAfter : imageBefore || ""}
-            alt={showAfterImage ? `Après de ${title}` : `Avant de ${title}`}
-            width={1000}
-            height={1000}
-            className={styles.imageZoom}
-          />
-
-
+          <div className={styles.imageContainer}>
+            {isImageLoading && <p className={styles.loadingText}>Chargement en cours...</p>}
+            <Image
+              src={showAfterImage && imageAfter ? imageAfter : imageBefore || ""}
+              alt={showAfterImage ? `Après de ${title}` : `Avant de ${title}`}
+              width={1000}
+              height={1000}
+              className={styles.imageZoom}
+              onLoad={() => setImageLoading(false)} // Marque l'image comme chargée
+            />
+          </div>
           {imageBefore && imageAfter && (
             <button onClick={toggleImage} className={styles.toggleButton}>
               {showAfterImage ? "Avant" : "Après"}

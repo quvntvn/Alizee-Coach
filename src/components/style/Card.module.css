@@ -122,3 +122,34 @@
 .imageZoom img.loaded {
     opacity: 1;
 }
+
+.imageContainer {
+    position: relative;
+    width: 100%;
+    height: 300px;
+  }
+  
+  .loadingText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1rem;
+    color: #7f8c8d;
+    font-weight: bold;
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; /* Initialement cachée */
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .imageZoom {
+    opacity: 1; /* Affichée lorsque chargée */
+  }
+  
