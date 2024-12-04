@@ -125,3 +125,13 @@
     opacity: 1;
 }
 
+.image.loading,
+.imageZoom.loading {
+  filter: blur(10px);
+  transition: filter 0.3s ease-out;
+}
+
+.image:not(.loading),
+.imageZoom:not(.loading) {
+  filter: none;
+}

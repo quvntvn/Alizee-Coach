@@ -1,8 +1,5 @@
-// src/components/Card.tsx
-'use client';
-
 import React, { useState } from "react";
-import Image from "next/image";
+import ProgressiveImage from "react-progressive-image";
 import { FaStar } from "react-icons/fa";
 import Modal from "./Modal";
 import styles from "./style/Card.module.css";
@@ -17,7 +14,15 @@ interface CardProps {
   rating: number;
 }
 
-export default function Card({ title, description, imageBefore, imageAfter, duration, program, rating }: CardProps) {
+export default function Card({
+  title,
+  description,
+  imageBefore,
+  imageAfter,
+  duration,
+  program,
+  rating,
+}: CardProps) {
   const [isModalOpen, setModalOpen] = useState(false);
   const [showAfterImage, setShowAfterImage] = useState(false);
 
@@ -32,19 +37,22 @@ export default function Card({ title, description, imageBefore, imageAfter, dura
     <>
       <div className={styles.card} onClick={openModal}>
         <h3 className={styles.cardTitle}>{title}</h3>
-        
+
         {imageBefore && (
-          <Image
-          src={imageAfter || ""}
-          alt={`Avant de ${title}`}
-          width={300}
-          height={300}
-          className={styles.image}
-/> 
+          <ProgressiveImage src={imageBefore} placeholder="/images/placeholder.png">
+            {(src: string, loading: boolean) => (
+              <img
+                src={src}
+                alt={`Avant de ${title}`}
+                className={`${styles.image} ${loading ? styles.loading : ""}`}
+              />
+            )}
+          </ProgressiveImage>
         )}
+
         <p className={styles.cardDescription}>{description}</p>
         <p className={styles.durationProgram}>{duration} | {program}</p>
-        
+
         <div className={styles.rating}>
           {Array.from({ length: rating }, (_, i) => (
             <FaStar key={i} className={styles.ratingIcon} />
@@ -55,14 +63,20 @@ export default function Card({ title, description, imageBefore, imageAfter, dura
       {isModalOpen && (
         <Modal isOpen={isModalOpen} onClose={closeModal}>
           <h3>{title}</h3>
-          <Image
-            src={showAfterImage && imageAfter ? imageAfter : imageBefore || ""}
-            alt={showAfterImage ? `Après de ${title}` : `Avant de ${title}`}
-            width={1000}
-            height={1000}
-            className={styles.imageZoom}
-          />
-
+          {imageBefore && (
+            <ProgressiveImage
+              src={showAfterImage && imageAfter ? imageAfter : imageBefore}
+              placeholder="/images/placeholder.png"
+            >
+              {(src: string, loading: boolean) => (
+                <img
+                  src={src}
+                  alt={showAfterImage ? `Après de ${title}` : `Avant de ${title}`}
+                  className={`${styles.imageZoom} ${loading ? styles.loading : ""}`}
+                />
+              )}
+            </ProgressiveImage>
+          )}
 
           {imageBefore && imageAfter && (
             <button onClick={toggleImage} className={styles.toggleButton}>
