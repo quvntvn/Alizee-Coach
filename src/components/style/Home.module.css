@@ -26,7 +26,7 @@
   .loadingGif {
     object-fit: cover;
     position: absolute; /* Positionner le gif de façon absolue par rapport à .heroLeftColumn */
-    z-index: -1; /* Mettre le gif derrière l'image */
+    z-index: 2; /* Mettre le gif derrière l'image */
   }
   
   .heroRightColumn {
@@ -38,6 +38,7 @@
   }
   
   .heroImage {
+    z-index: 1; /* Mettre l'image devant le gif */
     object-fit: cover;
     border-radius: 8px;
     width: 100%;
