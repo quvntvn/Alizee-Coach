@@ -3,10 +3,15 @@
   border-radius: 10px;
   flex-wrap: wrap;
   gap: 2rem;
+  background-image: url('/path/to/your/image.jpg'); /* Chemin vers l'image */
+  background-size: cover; /* L'image couvrira tout l'espace disponible */
+  background-position: center; /* Centrez l'image */
+  background-repeat: no-repeat; /* Pas de répétition */
   align-items: center;
   justify-content: center;
   flex-direction: column; /* Ajouté pour empiler les éléments (photo au-dessus du texte) */
 }
+
 
 .storySection {
   margin-top: 2rem;
