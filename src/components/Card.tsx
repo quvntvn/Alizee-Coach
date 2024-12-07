@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ProgressiveImage from "react-progressive-image";
+import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 import Modal from "./Modal";
 import styles from "./style/Card.module.css";
@@ -25,6 +25,7 @@ export default function Card({
 }: CardProps) {
   const [isModalOpen, setModalOpen] = useState(false);
   const [showAfterImage, setShowAfterImage] = useState(false);
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   const openModal = () => setModalOpen(true);
   const closeModal = () => {
@@ -33,21 +34,34 @@ export default function Card({
   };
   const toggleImage = () => setShowAfterImage(!showAfterImage);
 
+  const currentImage = showAfterImage && imageAfter ? imageAfter : imageBefore;
+
   return (
     <>
       <div className={styles.card} onClick={openModal}>
         <h3 className={styles.cardTitle}>{title}</h3>
 
         {imageBefore && (
-          <ProgressiveImage src={imageBefore} placeholder="/images/placeholder.png">
-            {(src: string, loading: boolean) => (
-              <img
-                src={src}
-                alt={`Avant de ${title}`}
-                className={`${styles.image} ${loading ? styles.loading : ""}`}
-              />
+          <div className={styles.imageContainer}>
+            <Image 
+              src={imageBefore} 
+              alt={`Avant de ${title}`}
+              width={300}
+              height={300}
+              className={`${styles.image} ${!isImageLoaded ? styles.loading : ''}`}
+              onLoadingComplete={() => setIsImageLoaded(true)}
+            />
+            {!isImageLoaded && (
+              <div className={styles.loadingGif}>
+                <Image 
+                  src="/images/loading.gif" 
+                  alt="Chargement" 
+                  width={50} 
+                  height={50} 
+                />
+              </div>
             )}
-          </ProgressiveImage>
+          </div>
         )}
 
         <p className={styles.cardDescription}>{description}</p>
@@ -63,19 +77,27 @@ export default function Card({
       {isModalOpen && (
         <Modal isOpen={isModalOpen} onClose={closeModal}>
           <h3>{title}</h3>
-          {imageBefore && (
-            <ProgressiveImage
-              src={showAfterImage && imageAfter ? imageAfter : imageBefore}
-              placeholder="/images/placeholder.png"
-            >
-              {(src: string, loading: boolean) => (
-                <img
-                  src={src}
-                  alt={showAfterImage ? `Après de ${title}` : `Avant de ${title}`}
-                  className={`${styles.imageZoom} ${loading ? styles.loading : ""}`}
-                />
+          {currentImage && (
+            <div className={styles.modalImageContainer}>
+              <Image 
+                src={currentImage}
+                alt={showAfterImage ? `Après de ${title}` : `Avant de ${title}`}
+                width={500}
+                height={500}
+                className={`${styles.imageZoom} ${!isImageLoaded ? styles.loading : ''}`}
+                onLoadingComplete={() => setIsImageLoaded(true)}
+              />
+              {!isImageLoaded && (
+                <div className={styles.loadingGif}>
+                  <Image 
+                    src="/images/loading.gif" 
+                    alt="Chargement" 
+                    width={50} 
+                    height={50} 
+                  />
+                </div>
               )}
-            </ProgressiveImage>
+            </div>
           )}
 
           {imageBefore && imageAfter && (
