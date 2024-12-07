@@ -33,7 +33,7 @@
     align-items: center;
     align-content: center;
     position: absolute; /* Positionner le gif de façon absolue par rapport à .heroLeftColumn */
-    z-index: 1; /* Mettre le gif derrière l'image */
+    z-index: 2; /* Mettre le gif derrière l'image */
   }
   
   .heroRightColumn {
@@ -45,7 +45,7 @@
   }
   
   .heroImage {
-    z-index: 2; /* Mettre l'image devant le gif */
+    z-index: 3; /* Mettre l'image devant le gif */
     object-fit: cover;
     border-radius: 8px;
     width: 100%;
