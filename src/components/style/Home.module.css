@@ -22,18 +22,13 @@
     align-items: center;
     max-width: 30%; /* Limite la largeur pour correspondre à la colonne de texte */
   }
-
+  
   .loadingGif {
-    object-fit: cover;
-    width: auto;
-    padding-top: 40%;
-    height: auto;
-    justify-content: center;
-    align-items: center;
-    align-items: center;
-    align-content: center;
-    position: absolute; /* Positionner le gif de façon absolue par rapport à .heroLeftColumn */
-    z-index: 2; /* Mettre le gif derrière l'image */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
   }
   
   .heroRightColumn {

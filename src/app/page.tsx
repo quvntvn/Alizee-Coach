@@ -13,6 +13,7 @@ import ReservationBtn from '../components/ReversationBtn';
 
 export default function Home() {
   const [isClient, setIsClient] = useState(false);
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
@@ -33,12 +34,24 @@ export default function Home() {
         <section className={style.hero} aria-label="Section Héro présentant Alizé et son parcours">
           {/* Colonne 1 : Image et parcours */}
           <div className={style.heroLeftColumn} aria-label="Présentation du parcours d'Alizé">
-            <Image src="/images/alize.jpg" alt="Portrait d'Alizé Waron, coach sportif" width={1000} height={1000} className={style.heroImage} />
-            
-            {/* Ajout du GIF ici */}
-            <div className={style.loadingGif}>
-              <Image src="/images/loading.gif" alt="Chargement" width={50} height={50} />
-            </div>
+          <Image 
+        src="/images/alize.jpg" 
+        alt="Portrait d'Alizé Waron, coach sportif" 
+        width={1000} 
+        height={1000} 
+        className={style.heroImage}
+        onLoadingComplete={() => setIsImageLoaded(true)}
+      />
+      
+      {!isImageLoaded && (
+        <div className={style.loadingGif}>
+          <Image 
+            src="/images/loading.gif" 
+            alt="Chargement" 
+            width={50} 
+            height={50} 
+          />
+        </div> )}
 
             <div className={style.alizeJourney} aria-labelledby="journey-title">
               <h2 id="journey-title">Mon parcours</h2>
