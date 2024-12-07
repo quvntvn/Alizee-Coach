@@ -22,17 +22,14 @@
     align-items: center;
     max-width: 30%; /* Limite la largeur pour correspondre à la colonne de texte */
   }
-
-.loadingGif {
-  position: absolute;
-  padding-top: 40%;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  align-self: center;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-}
+  
+  .loadingGif {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
   
   .heroRightColumn {
     flex: 1;
