@@ -25,17 +25,23 @@
   
   .loadingText {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     width: 100%;
     aspect-ratio: 1 / 1;
-    vertical-align: middle;
     color: black;
     background-color: white;
     border-radius: 8px;
     font-size: 1.5rem;
     z-index: 10;
-    animation: fadeIn 1s ease-in-out infinite;
+    animation: fadeIn 0.5s ease-in-out infinite;
   }
+  
   
   @keyframes fadeIn {
     0%, 100% {
