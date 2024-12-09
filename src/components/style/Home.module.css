@@ -26,7 +26,7 @@
   .loadingText {
     position: absolute;
     text-align: center;
-    padding-top: 30%;
+    margin-top: 50vh;
     margin-bottom: 1rem;
     width: 100%;
     aspect-ratio: 1 / 1;
