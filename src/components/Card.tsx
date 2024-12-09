@@ -52,14 +52,9 @@ export default function Card({
               onLoadingComplete={() => setIsImageLoaded(true)}
             />
             {!isImageLoaded && (
-              <div className={styles.loadingGif}>
-                <Image 
-                  src="/images/loading.gif" 
-                  alt="Chargement" 
-                  width={50} 
-                  height={50} 
-                />
-              </div>
+        <div className={`${styles.loadingText}`}>
+        <p>Chargement...</p>
+      </div>
             )}
           </div>
         )}
@@ -88,14 +83,9 @@ export default function Card({
                 onLoadingComplete={() => setIsImageLoaded(true)}
               />
               {!isImageLoaded && (
-                <div className={styles.loadingGif}>
-                  <Image 
-                    src="/images/loading.gif" 
-                    alt="Chargement" 
-                    width={50} 
-                    height={50} 
-                  />
-                </div>
+        <div className={`${styles.loadingText}`}>
+        <p>Chargement...</p>
+      </div>
               )}
             </div>
           )}
