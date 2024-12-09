@@ -23,13 +23,25 @@
     max-width: 30%; /* Limite la largeur pour correspondre à la colonne de texte */
   }
   
-  .loadingGif {
+  .loadingText {
     position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    text-align: center;
+    color: black;
+    background-color: white;
+    font-size: 1.5rem;
     z-index: 10;
+    animation: fadeIn 1s ease-in-out infinite;
   }
+  
+  @keyframes fadeIn {
+    0%, 100% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  
   
   .heroRightColumn {
     flex: 1;

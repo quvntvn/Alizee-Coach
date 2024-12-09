@@ -44,13 +44,8 @@ export default function Home() {
       />
       
       {!isImageLoaded && (
-        <div className={style.loadingGif}>
-          <Image 
-            src="/images/loading.gif" 
-            alt="Chargement" 
-            width={50} 
-            height={50} 
-          />
+        <div className={style.loadingText}>
+          <p>Chargement...</p>
         </div> )}
 
             <div className={style.alizeJourney} aria-labelledby="journey-title">
