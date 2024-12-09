@@ -50,6 +50,12 @@ export default function TestimonialsPage() {
         <link rel="preload" as="image" href="/images/sophiemA.png" />
       </Head>
       <main className={styles.main}> {/* Classe principale */}
+      <link rel="preload" as="image" href="/images/clairedB.png" />
+        <link rel="preload" as="image" href="/images/clairedA.png" />
+        <link rel="preload" as="image" href="/images/thomamB.png" />
+        <link rel="preload" as="image" href="/images/thomamA.png" />
+        <link rel="preload" as="image" href="/images/sophiemB.png" />
+        <link rel="preload" as="image" href="/images/sophiemA.png" />
         <FadeIn>
           <SectionTitle text="Témoignages" />
           <section className={styles.grid}> {/* Grille des témoignages */}

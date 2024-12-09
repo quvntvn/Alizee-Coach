@@ -26,6 +26,7 @@
   .loadingText {
     position: absolute;
     text-align: center;
+    padding-top: 30%;
     width: 100%;
     aspect-ratio: 1 / 1;
     vertical-align: middle;
@@ -59,6 +60,7 @@
     z-index: 3; /* Mettre l'image devant le gif */
     object-fit: cover;
     border-radius: 8px;
+    aspect-ratio: 1 / 1;
     width: 100%;
     height: auto;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
