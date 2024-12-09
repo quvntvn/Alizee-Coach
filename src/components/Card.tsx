@@ -36,67 +36,70 @@ export default function Card({
 
   const currentImage = showAfterImage && imageAfter ? imageAfter : imageBefore;
 
-  return (
-    <>
-      <div className={styles.card} onClick={openModal}>
-        <h3 className={styles.cardTitle}>{title}</h3>
-
-        {imageBefore && (
-          <div className={styles.imageContainer}>
-            <Image 
-              src={imageBefore} 
-              alt={`Avant de ${title}`}
-              width={300}
-              height={300}
-              className={`${styles.image} ${!isImageLoaded ? styles.loading : ''}`}
+  return (<>
+    <div className={styles.card} onClick={openModal}>
+      <h3 className={styles.cardTitle}>{title}</h3>
+      
+      {imageBefore && (
+        <div className={styles.imageContainer}>
+          <Image
+            src={imageBefore}
+            alt={`Image avant de ${title}`}
+            width={300}
+            height={300}
+            className={`${styles.image} ${!isImageLoaded ? styles.loading : ""}`}
+            onLoadingComplete={() => setIsImageLoaded(true)}
+          />
+          {!isImageLoaded && (
+            <div className={styles.loadingText}>
+              <p>Chargement...</p>
+            </div>
+          )}
+        </div>
+      )}
+      
+      <p className={styles.cardDescription}>{description}</p>
+      <p className={styles.durationProgram}>{duration} | {program}</p>
+      
+      <div className={styles.rating}>
+        {Array.from({ length: rating }, (_, i) => (
+          <FaStar key={i} className={styles.ratingIcon} />
+        ))}
+      </div>
+    </div>
+    
+    {isModalOpen && (
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        <h3>{title}</h3>
+        {currentImage && (
+          <div className={styles.modalImageContainer}>
+            <Image
+              src={currentImage}
+              alt={showAfterImage ? `Image après de ${title}` : `Image avant de ${title}`}
+              width={500}
+              height={500}
+              className={`${styles.imageZoom} ${!isImageLoaded ? styles.loading : ""}`}
               onLoadingComplete={() => setIsImageLoaded(true)}
             />
             {!isImageLoaded && (
-        <div className={`${styles.loadingText}`}>
-        <p>Chargement...</p>
-      </div>
+              <div className={styles.loadingText}>
+                <p>Chargement...</p>
+              </div>
             )}
           </div>
         )}
-
-        <p className={styles.cardDescription}>{description}</p>
-        <p className={styles.durationProgram}>{duration} | {program}</p>
-
-        <div className={styles.rating}>
-          {Array.from({ length: rating }, (_, i) => (
-            <FaStar key={i} className={styles.ratingIcon} />
-          ))}
-        </div>
-      </div>
-
-      {isModalOpen && (
-        <Modal isOpen={isModalOpen} onClose={closeModal}>
-          <h3>{title}</h3>
-          {currentImage && (
-            <div className={styles.modalImageContainer}>
-              <Image 
-                src={currentImage}
-                alt={showAfterImage ? `Après de ${title}` : `Avant de ${title}`}
-                width={500}
-                height={500}
-                className={`${styles.imageZoom} ${!isImageLoaded ? styles.loading : ''}`}
-                onLoadingComplete={() => setIsImageLoaded(true)}
-              />
-              {!isImageLoaded && (
-        <div className={`${styles.loadingText}`}>
-        <p>Chargement...</p>
-      </div>
-              )}
-            </div>
-          )}
-
-          {imageBefore && imageAfter && (
-            <button onClick={toggleImage} className={styles.toggleButton}>
-              {showAfterImage ? "Avant" : "Après"}
-            </button>
-          )}
-        </Modal>
-      )}
-    </>
+        
+        {imageBefore && imageAfter && (
+          <button
+            onClick={toggleImage}
+            className={styles.toggleButton}
+            aria-label={`Afficher l'image ${showAfterImage ? "avant" : "après"}`}
+          >
+            {showAfterImage ? "Avant" : "Après"}
+          </button>
+        )}
+      </Modal>
+    )}
+  </>
   );
 }
