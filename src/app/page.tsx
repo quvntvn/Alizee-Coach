@@ -73,7 +73,7 @@ export default function Home() {
             <div className={style.contactInfo} aria-label="Informations de contact d'Alizé">
             <p><FaPhone /> <Link href="tel:+33761933515" >+33 7 61 93 35 15</Link></p>
             <p><FaEnvelope /> <Link href="mailto:alizepoledancer@gmail.com">alizepoledancer@gmail.com</Link></p>
-              <p><FaInstagram /> <a href="https://www.instagram.com/mindtomvmt" target="_blank" rel="noopener noreferrer">mindtomvmt</a></p>
+              <p><FaInstagram /> <a href="https://www.instagram.com/laculturedumouvement" target="_blank" rel="noopener noreferrer">laculturedumouvement</a></p>
             </div>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Des méthodes qui vont au-delà de la pratique sportive, elles vous aident à mieux comprendre le fonctionnement de votre corps et de votre esprit.</p>
 
