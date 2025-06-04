@@ -19,7 +19,8 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.container}>
         <Link href="/">
-          <img src="images/logo.png" alt="Thé Tip Top Logo" className={styles.logo} />
+          {/* Use absolute path so the logo loads correctly on every page */}
+          <img src="/images/logo.png" alt="Alizé Coach Logo" className={styles.logo} />
         </Link>
         
         {/* Bouton pour le menu mobile */}
