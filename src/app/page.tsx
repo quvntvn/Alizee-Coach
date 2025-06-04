@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import style from '../components/style/Home.module.css';
 import FadeIn from 'react-fade-in';
-import ReservationBtn from '../components/ReversationBtn';
+import ReservationBtn from '../components/ReservationBtn';
 
 export default function Home() {
   const [isClient, setIsClient] = useState(false);
