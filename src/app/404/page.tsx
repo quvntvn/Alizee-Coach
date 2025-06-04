@@ -8,8 +8,11 @@ export default function NotFound() {
   return (
     <>
       <Head>
-        <title>Message envoyé | Thé Tip Top</title>
-        <meta name="description" content="Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais." />
+        <title>Erreur 404 | Thé Tip Top</title>
+        <meta
+          name="description"
+          content="La page que vous cherchez n'existe pas."
+        />
       </Head>
       <main>
         <FadeIn>
