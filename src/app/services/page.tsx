@@ -1,7 +1,7 @@
 // src/pages/ServicesPage.js
 "use client"
 import { FaDumbbell, FaRunning, FaAppleAlt, FaHeartbeat } from "react-icons/fa";
-import ReservationBtn from '../../components/ReversationBtn';
+import ReservationBtn from '../../components/ReservationBtn';
 import styles from '../../components/style/Services.module.css';
 import SectionTitle from "@/components/SectionTitle";
 import FadeIn from 'react-fade-in';

@@ -4,7 +4,7 @@ import Head from "next/head"; // Import du composant Head de Next.js
 import Card from "@/components/Card";
 import SectionTitle from "@/components/SectionTitle";
 import FadeIn from "react-fade-in";
-import ReservationBtn from '../../components/ReversationBtn';
+import ReservationBtn from '../../components/ReservationBtn';
 import styles from "@/components/style/Temoignages.module.css"; // Module CSS importé
 
 const testimonials = [

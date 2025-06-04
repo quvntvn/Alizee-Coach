@@ -2,7 +2,7 @@
 import SectionTitle from "@/components/SectionTitle";
 import ProfileImage from "@/components/ProfileImage";
 import styles from "../../components/style/APropos.module.css";
-import ReservationBtn from '../../components/ReversationBtn';
+import ReservationBtn from '../../components/ReservationBtn';
 import FadeIn from 'react-fade-in';
 
 export default function AboutPage() {
